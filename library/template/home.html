@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block title %} Home {%endblock%}
+{% block content %}
+<center><h1>Home Page</h1>
+{% if user.is_authenticated %}
+    <p1>Hello {{user.username}}</p1>
+    {% else %}
+    <p>guest</p>
+{% endif %}
+</center>
+<button><a href="{%url 'books:fact' %}"  class="button">factorial of a number</a></button>
+
+{% endblock%}

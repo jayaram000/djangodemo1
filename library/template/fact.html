@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block title %} factorial {%endblock%}
+{% load static %}
+
+{% block content %}
+<h1>factorial</h1>
+<center>
+<form method="POST">
+    {% csrf_token %}
+    <input type="number" name="n" placeholder="enter the number" class="form-control">
+    <input type="submit" class="btn-outline-warning">
+    {% if fact %}
+    <h3>factorial is <span class="text-primary">{{fact}}</span></h3>
+
+    {% endif %}
+</form>
+</center>
+{% endblock %}
